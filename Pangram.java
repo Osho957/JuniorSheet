@@ -16,9 +16,9 @@ public class Pangram {
 	hs.add(string.charAt(i));
 }
  if(hs.size()==26) {
-	 System.out.println("Yes");
+	 System.out.println("YES");
  }else {
-	 System.out.println("No");
+	 System.out.println("NO");
  }
 	}
 
