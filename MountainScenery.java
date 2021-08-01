@@ -9,31 +9,26 @@ public class MountainScenery {
 		// TODO Auto-generated method stub
     Scanner sc = new Scanner(System.in);
     int n = sc.nextInt();
-    int m  = sc.nextInt();
-    int a[] = new int[2*n+1];
-    int max = Integer.MIN_VALUE;
-    for (int i = 0; i < a.length; i++) {
-		a[i]= sc.nextInt();
-		
-	}
-    
-    for (int i = 0; i < a.length; i++) {
-    	boolean ok = true;
-		for (int j = i+1; j < a.length; j++) {
-		if(a[i]<a[j]) {
-			ok= false;
-			break;
-		}
-		}
-		if(ok&&m>0) {
+   int  k= sc.nextInt();
+   int a[] = new int[2*n+1];
+   for (int i = 0; i < a.length; i++) {
+	a[i]= sc.nextInt();
+}
+   
+   for (int i = 1; i < a.length-1; i=i+2) {
+	if(a[i]>a[i-1] && a[i]>a[i+1] && k>0) {
+		if(a[i]-1!=a[i-1]&&a[i]-1!=a[i+1]) {
 			a[i]=a[i]-1;
-			m--;
+			k--;
 		}
 	}
-    for (int i = 0; i < a.length; i++) {
-		System.out.print(a[i]+" ");
+	
+}
+   for (int j = 0; j < a.length; j++) {
+		System.out.print(a[j]+" ");
 	}System.out.println();
-  
+	
+   
+   
 	}
-
 }

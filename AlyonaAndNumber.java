@@ -13,16 +13,17 @@ public class AlyonaAndNumber {
        long remn[] = new long[5];
        long remm[] = new long[5];
        
-       for (int i = 1; i <=n; i++) {
+       for (int i = 1; i <=n; i++) { //6
 		remn[i%5]++;
 	}
-       for (int i = 1; i <=m; i++) {
+       for (int i = 1; i <=m; i++) { //12
    		remm[i%5]++;
    	}
        
        long count =remn[0]*remm[0];
        for (int i = 1; i < remm.length; i++) {
 		count+=remn[i]*remm[5-i];
+		        //1     // 4
 	}
        System.out.println(count);
 	}
