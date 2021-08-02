@@ -9,34 +9,21 @@ public class KseniaAndPanScale {
            Scanner sc = new Scanner(System.in);
            String string = sc.next();
            String input = sc.next();
-          
-           int len1 =0;
-           int len2 =0;
-           int idx =-1;
-           for (int i = 0; i < string.length(); i++) {
-			if(string.charAt(i)!='|') {
-				len1++;
+          int idx = string.indexOf("|");
+         String left = string.substring(0,idx);
+         String right = string.substring(idx+1);
+         for (int i = 0; i < input.length(); i++) {
+			if(left.length()<right.length()) {
+				left+=input.charAt(i);
 			}else {
-				idx=i;
-				break;
-			}	
+				right+=input.charAt(i);
+			}
 		}
-         len2  = string.substring(idx+1).length();
-         if(len1==len2) {
+         if(right.length()==left.length()) {
+        	 System.out.println(left+'|'+right);
+         }else {
         	 System.out.println("Impossible");
-         }else if(len1<len2) {
-			if(len1+input.length()==len2) {
-				System.out.println(input+string.substring(0,idx)+"|"+string.substring(idx+1));
-			}else {
-				System.out.println("Impossible");
-			}
-		}else {
-			if(len2+input.length()==len1) {
-				System.out.println(string.substring(0,idx)+"|"+input+string.substring(idx+1));
-			}else {
-				System.out.println("Impossible");
-			}
-		}
+         }
 	}
 
 }
